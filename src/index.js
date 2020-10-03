@@ -1,39 +1,44 @@
 
 exports.min = function min (array) {
-  let minNumber = 0;
-  if(array === undefined || arguments.length === 0 || array.length === 0) {
-      minNumber = 0;
-      return minNumber
-  }else { 
-  for (i = 0; i = array.length; ++i) {
-    if (array[i] < minNumber) {
-        minNumber = array[i];
-        return minNumber;
+
+if (array == undefined || array.length == 0) {
+    return 0;
+} else{
+    let minimum = array[0];
+    for(let i = 1; i < array.length; i++){
+        if(array[i] < minimum){
+            minimum = array[i];
+        }
+   
     }
-}
+    return minimum
 }
 }
 
 exports.max = function max (array) {
-    let maxNumber = 0;
-    if (array === undefined || arguments.length === 0 || array.length === 0) {
-        maxNumber = 0;
-        return maxNumber;
-    }
-else{
-    for(i=0; i = array.length; i++){
-        if(array[i] > maxNumber){
-            maxNumber = array[i];
-            return maxNumber;
+    
+    if (array == undefined || array.length == 0) {
+        return 0;
+    } else{
+        let maximum = array[0];
+        for(let i = 1; i < array.length; i++){
+            if(array[i] > maximum){
+                maximum = array[i];
+            }
+       
         }
-    }
-}
-}
+        return maximum
+    }}
 
 exports.avg = function avg (array) {
-  let avgNumber = 0;
-  for(i = 0; i = array.length; i++){
-      avgNumber = (avgNumber + array[i]) / i++
-  }
-    return avgNumber;
+    if (array == undefined || array.length == 0) {
+        return 0;
+    } else {
+        let average = 0;
+        for(let i = 0; i < array.length;i++){
+            average = average + array[i]
+        }
+        return average / array.length;
+
+    }
 }
